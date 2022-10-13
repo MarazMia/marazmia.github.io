@@ -1,12 +1,21 @@
+function getRandomColor() {
+  var letters = '0123456789ABCDEF'.split('');
+  var color = '#';
+  for (var i = 0; i < 6; i++ ) {
+      color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
 var xValues = ["Solved", "Attended Contests", "Highest Rating", "Highest Rank"];
-var Total_xValues = ["Total Solved", "Total Attended Contests"];
-var CF_yValues = [368, 50, 1366, 3062];
+var Total_xValues = ["Total Solved", "CodeForces", "LeetCode", "CodeChef", "AtCoder", "HackerEarth", "Others", "Total Attended Contests"];
+var CF_yValues = [372, 50, 1366, 3062];
 var CC_yValues = [75, 12, 1525, 591];
 var HE_yValues = [61, 6, 1505, 732];
 var AC_yValues = [75, 12, 177, 781];
-var Total_yValues = [881, 80];
-var barColors = ["blue", "green","cyan","orange","magenta"];
-var Total_barColors = ["red", "magenta"];
+var Total_yValues = [885, 368, 178, 75, 75, 61, 128, 80];
+var barColors = [getRandomColor(), getRandomColor(), getRandomColor(), getRandomColor(), getRandomColor()];
+var Total_barColors = [getRandomColor(), getRandomColor(),getRandomColor(),getRandomColor(),getRandomColor(),getRandomColor(),getRandomColor(),getRandomColor()];
 
 new Chart("CF_Chart", {
   type: "bar",
