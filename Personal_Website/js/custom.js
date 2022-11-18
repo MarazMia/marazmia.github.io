@@ -7,13 +7,17 @@ function getRandomColor() {
     return color;
   }
   
-  var xValues = ["Solved", "Attended Contests", "Highest Rating", "Highest Rank"];
+  var xValues = ["CodeForces", "CodeChef", "HackerEarth", "AtCoder"];
   var Total_xValues = ["CodeForces", "LeetCode", "CodeChef", "AtCoder", "HackerEarth", "Others"];
   var CF_yValues = [372, 50, 1366, 3062];
   var CC_yValues = [75, 12, 1525, 591];
   var HE_yValues = [61, 6, 1505, 732];
   var AC_yValues = [75, 12, 177, 781];
-  var Total_yValues = [368, 178, 75, 75, 61, 128];
+  var rating_yValues = [1366, 1525, 1505, 177];
+  var ranking_yValues = [3062, 591, 732, 781];
+  var contests_yValues = [50, 12, 6, 12];
+  var solved_yValues = [372, 75, 61, 75];
+  var Total_yValues = [372, 178, 75, 75, 61, 128];
   var barColors = [getRandomColor(), getRandomColor(), getRandomColor(), getRandomColor(), getRandomColor()];
   var Total_barColors = [getRandomColor(),getRandomColor(),getRandomColor(),getRandomColor(),getRandomColor(),getRandomColor(),getRandomColor()];
   
@@ -23,14 +27,14 @@ function getRandomColor() {
       labels: xValues,
       datasets: [{
         backgroundColor: barColors,
-        data: CF_yValues
+        data: rating_yValues
       }]
     },
     options: {
       legend: {display: false},
       title: {
         display: true,
-        text: "Code Forces"
+        text: "Ratings"
       }
     }
   });
@@ -41,14 +45,14 @@ function getRandomColor() {
         labels: xValues,
         datasets: [{
           backgroundColor: barColors,
-          data: CC_yValues
+          data: ranking_yValues
         }]
       },
       options: {
         legend: {display: false},
         title: {
           display: true,
-          text: "Code Chef"
+          text: "Rankings"
         }
       }
     });
@@ -59,14 +63,14 @@ function getRandomColor() {
         labels: xValues,
         datasets: [{
           backgroundColor: barColors,
-          data: HE_yValues
+          data: contests_yValues
         }]
       },
       options: {
         legend: {display: false},
         title: {
           display: true,
-          text: "Hacker Earth"
+          text: "Contests"
         }
       }
     });
@@ -77,14 +81,14 @@ function getRandomColor() {
           labels: xValues,
           datasets: [{
             backgroundColor: barColors,
-            data: AC_yValues
+            data: solved_yValues
           }]
         },
         options: {
           legend: {display: false},
           title: {
             display: true,
-            text: "At Coder"
+            text: "Problems Solved"
           }
         }
       });
