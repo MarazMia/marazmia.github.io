@@ -8,12 +8,12 @@ function getRandomColor() {
   }
   
   var xValues = ["Solved", "Attended Contests", "Highest Rating", "Highest Rank"];
-  var Total_xValues = ["Total Solved", "CodeForces", "LeetCode", "CodeChef", "AtCoder", "HackerEarth", "Others", "Total Attended Contests"];
+  var Total_xValues = ["CodeForces", "LeetCode", "CodeChef", "AtCoder", "HackerEarth", "Others"];
   var CF_yValues = [372, 50, 1366, 3062];
   var CC_yValues = [75, 12, 1525, 591];
   var HE_yValues = [61, 6, 1505, 732];
   var AC_yValues = [75, 12, 177, 781];
-  var Total_yValues = [368, 178, 75, 75, 61, 128, 80];
+  var Total_yValues = [368, 178, 75, 75, 61, 128];
   var barColors = [getRandomColor(), getRandomColor(), getRandomColor(), getRandomColor(), getRandomColor()];
   var Total_barColors = [getRandomColor(),getRandomColor(),getRandomColor(),getRandomColor(),getRandomColor(),getRandomColor(),getRandomColor()];
   
