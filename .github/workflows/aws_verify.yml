@@ -1,0 +1,30 @@
+name: AWS OIDC Verification
+
+on:
+  push:
+    branches: [ main ]  # Runs every time you push to main
+  workflow_dispatch:      # Allows you to run it manually
+
+permissions:
+  id-token: write      # Required for requesting the JWT
+  contents: read       # Required for actions/checkout
+
+jobs:
+  VerifyAWS:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::374840872808:role/mmia43-assignment4-GitHub-Federated-Lab-Role # <--- YOUR ROLE ARN
+          aws-region: us-east-1 # <--- YOUR REGION
+          role-session-name: GitHubActionsSession
+
+      - name: Verify Identity
+        run: aws sts get-caller-identity
+
+      - name: Test S3 Access
+        run: aws s3 ls
